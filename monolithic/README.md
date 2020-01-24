@@ -1,3 +1,3 @@
 # Clock App
 
-Very simple application for demo purposes.  
+All-in-one version.  

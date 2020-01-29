@@ -12,9 +12,9 @@ client.connect({onSuccess:onConnect});
 function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
-    client.subscribe("html/controller");
-    message = new Paho.MQTT.Message("onConnect");
-    message.destinationName = "html/controller";
+    client.subscribe("app/clock");
+    message = new Paho.MQTT.Message("Ready?");
+    message.destinationName = "app/clock";
     client.send(message);
   }
   
@@ -27,8 +27,6 @@ function onConnect() {
   
   // called when a message arrives
   function onMessageArrived(message) {
-  //     const dateInMillisecs = Date.now();
-  //     const now = new Date (dateInMillisecs).toLocaleTimeString();
     document.getElementById("clock").innerHTML = message.payloadString;
     console.log(message.payloadString);
   }

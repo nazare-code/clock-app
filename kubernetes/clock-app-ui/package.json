@@ -1,0 +1,14 @@
+{
+  "name": "clock-app-fe",
+  "version": "1.0.0",
+  "description": "microservices clock app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "patriciochavez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

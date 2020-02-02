@@ -1,0 +1,11 @@
+ 
+apiVersion: v1
+kind: Pod
+metadata:
+ name: clockui
+ labels:
+   app: clockui
+spec:
+ containers:
+   - name: clockui
+     image: jumpingvm.example.com:5000/patriciochavez/clockui:latest

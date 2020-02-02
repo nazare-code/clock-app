@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: clockcron
+ labels:
+   app: clockcron
+spec:
+ containers:
+   - name: clockcron
+     image: jumpingvm.example.com:5000/patriciochavez/clockcron:latest

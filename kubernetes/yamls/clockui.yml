@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: clockui
+ labels:
+   app: clockui
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: clockui
+ template:
+   metadata:
+     labels:
+       app: clockui
+   spec:
+     containers:
+     - name: clockui
+       image: jumpingvm.example.com:5000/patriciochavez/clockui:latest
+       ports:
+       - containerPort: 3000
+

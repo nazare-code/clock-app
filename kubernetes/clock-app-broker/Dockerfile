@@ -1,15 +1,11 @@
-FROM ubuntu:latest
+FROM eclipse-mosquitto:latest
 LABEL maintainer="patriciochavez"
 
-RUN apt-get update && apt-get install mosquitto -y
-COPY mosquitto.conf /etc/mosquitto/mosquitto.conf
+RUN apk update && apk upgrade && apk add bash
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY broker_start.sh .
+COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 EXPOSE 1883/tcp
 EXPOSE 9001/tcp
 
-ENTRYPOINT ["/bin/bash", "/usr/src/app/broker_start.sh"]
-
+ENTRYPOINT ["/usr/sbin/mosquitto", "-d", "-c", "//mosquitto/config/mosquitto.conf"]

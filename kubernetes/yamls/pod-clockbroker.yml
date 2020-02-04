@@ -8,4 +8,3 @@ spec:
  containers:
    - name: clockbroker
      image: jumpingvm.example.com:5000/patriciochavez/clockbroker:latest
-     command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]

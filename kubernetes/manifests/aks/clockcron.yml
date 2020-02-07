@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: clockcron
+ labels:
+   app: clockcron
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: clockcron
+ template:
+   metadata:
+     labels:
+       app: clockcron
+   spec:
+     imagePullSecrets:
+     - name: regsecret
+     containers:
+     - name: clockcron
+       image: registry4demos.azurecr.io/patriciochavez/clockcron:latest

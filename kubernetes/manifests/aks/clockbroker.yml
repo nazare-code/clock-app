@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: clockbroker
+ labels:
+   app: clockbroker
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: clockbroker
+ template:
+   metadata:
+     labels:
+       app: clockbroker
+   spec:
+     imagePullSecrets:
+     - name: regsecret
+     containers:
+     - name: clockbroker
+       image: registry4demos.azurecr.io/patriciochavez/clockbroker:latest
+       ports:
+       - name: mqtt
+         containerPort: 1883
+       - name: ws
+         containerPort: 9001

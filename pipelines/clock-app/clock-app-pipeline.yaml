@@ -1,12 +1,12 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
-  name: tutorial-pipeline
+  name: clock-app-pipeline
 spec:
   resources:
     - name: source-repo
       type: git
-    - name: web-image
+    - name: clock-app-image
       type: image
   tasks:
     - name: build-clock-app

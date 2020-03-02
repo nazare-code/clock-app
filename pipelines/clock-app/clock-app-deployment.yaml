@@ -15,11 +15,11 @@ spec:
        app: clock-app
    spec:
      imagePullSecrets:
-     - name: regcred
+       - name: regcred
      containers:
-     - name: clock-app
-       image: registry4demos.azurecr.io/patriciochavez/clock-app
-       ports:
-       - containerPort: 3000
-       - containerPort: 1883
-       - containerPort: 9001
+       - name: clock-app
+         image: registry4demos.azurecr.io/patriciochavez/clock-app
+         ports:
+           - containerPort: 3000
+           - containerPort: 1883
+           - containerPort: 9001

@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: clock-app-pipeline-run-1
+spec:
+  serviceAccountName: clock-app-service-account
+  pipelineRef:
+    name: clock-app-pipeline
+  resources:
+    - name: source-repo
+      resourceRef:
+        name: clock-app-git
+    - name: clock-app-image
+      resourceRef:
+        name: clock-app-image

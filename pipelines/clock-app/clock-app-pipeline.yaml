@@ -37,6 +37,6 @@ spec:
               - build-clock-app
       params:
         - name: path
-          value: /workspace/source/kubernetes/manifests/aks/clock-app-deployment.yaml
+          value: /workspace/source/pipelines/clock-app/clock-app-deployment.yaml
         - name: yamlPathToImage
           value: "spec.template.spec.containers[0].image"

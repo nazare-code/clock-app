@@ -1,9 +1,9 @@
 #!/bin/bash
 kubectl apply -f clock-app-git.yaml
-sleep 1
 kubectl apply -f clock-app-image.yaml
-sleep 1
 kubectl apply -f build-docker-image-from-git-source.yaml
-sleep 1
-kubectl apply -f build-docker-image-from-git-source-task-run.yaml
+#kubectl apply -f build-docker-image-from-git-source-task-run.yaml
 #watch kubectl get taskrun build-docker-image-from-git-source-task-run
+kubectl apply -f deploy-using-kubectl.yaml
+kubectl apply -f clock-app-pipeline.yaml
+kubectl apply -f clock-app-pipeline-run.yaml

@@ -1,6 +1,6 @@
 kubectl create clusterrole clock-app-role \
                --verb=get,list,watch,create,update,patch,delete \
-               --resource=deployments,deployments.apps,services,services.apps
+               --resource=deployments,deployments.apps,service
 
 
 kubectl create clusterrolebinding clock-app-binding \

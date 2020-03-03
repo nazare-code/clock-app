@@ -1,0 +1,1 @@
+kubectl get service svc-clockui | awk NR {print })

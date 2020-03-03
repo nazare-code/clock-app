@@ -20,6 +20,6 @@ sleep 30
 echo "[TASK 5] Just 30 seconds more"
 sleep 30
 clear
-PORTUI=$(kubectl get service svc-clock-app | awk 'NR > 1 {print $4}'); clear; echo "App runnning on http://$PORTUI"
-echo "If no IP appears, run the following command a couple of times" 
-echo "kubectl get service svc-clock-app | awk 'NR > 1 {print $4}'"
+PORTUI=$(kubectl get service svc-clockui | awk 'NR > 1 {print $4}'); clear; echo "App runnning on http://$PORTUI"
+echo "Note: If IP doesn't appear run the following command a couple of times"
+echo 'PORTUI=$(kubectl get service svc-clockui | awk 'NR > 1 {print $4}'); clear; echo "App runnning on http://$PORTUI"'

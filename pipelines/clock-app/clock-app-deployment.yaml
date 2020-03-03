@@ -27,11 +27,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-   name: svc-clockbroker
+   name: svc-clock-app
 spec:
    selector:
-     app: clockbroker
+     app: clock-app
    ports:
+     - protocol: TCP
+       port: 80
+       targetPort: 3000
      - name: mqtt
        protocol: TCP
        port: 1883
@@ -41,16 +44,3 @@ spec:
        port: 9001
        targetPort: 9001
    type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: svc-clockui
-spec:
-  selector:
-    app: clockui
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: LoadBalancer

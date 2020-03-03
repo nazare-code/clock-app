@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo "[TASK 1] Delete resources"
+NOW=$(date +"%D %T"); echo $NOW "[INFO] Delete resources"
 tkn resources delete clock-app-git clock-app-image --force
 tkn task delete build-docker-image-from-git-source --force
 tkn task delete deploy-using-kubectl --force
@@ -10,7 +10,7 @@ kubectl get replicaset | grep clock-app | awk '{print $1}' | xargs kubectl delet
 kubectl delete deployment clock-app
 kubectl get pods | grep clock-app | awk '{print $1}' | xargs kubectl delete pod
 kubectl delete services svc-clock-app
-echo "[TASK 2] Show current resources"
+NOW=$(date +"%D %T"); echo $NOW "[INFO] Show pods"
 kubectl get pods
 kubectl get tekton-pipelines
 clear

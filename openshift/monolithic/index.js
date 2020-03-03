@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.set('info', process.env.RUNNING_ON || 'local');
+app.set('info', process.env.RUNNING_ON || 'on aks!');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
